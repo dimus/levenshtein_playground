@@ -1,9 +1,8 @@
 #!/usr/bin/env ruby1.9
 # encoding UTF-8
 require 'pp'
-require 'set'
 
-def distance(str1,str2, max_dist, transposition_limit = 2)
+def distance(str1, str2, max_dist, transposition_limit = 2)
   sl1 = str1.size
   sl2 = str2.size
   return 0 if str1 == str2
@@ -48,4 +47,4 @@ def distance(str1,str2, max_dist, transposition_limit = 2)
   return d[sl2-1][sl1-1]
 end
 
-puts distance('Pmtoomusa saltarot', 'Pomatomus saltator', 60, 40)
+puts distance('Pmtoomusa saltarot', 'Pomatomus saltator', 4, 4)
