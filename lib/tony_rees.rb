@@ -49,7 +49,6 @@ def mdld(p_str1, p_str2, p_block_limit=1)
   end
   # populate remaining columns (rows in our case)
   (1...v_str1_length).each do |s|
-    puts s
     v_my_columns[s][0] = s 
     # populate each cell of one column:
     (1...v_str2_length).each do |t|
@@ -72,7 +71,6 @@ def mdld(p_str1, p_str2, p_block_limit=1)
           ].min
           v_temp_block_length = 0
         elsif v_temp_block_length == 1
-          puts 'here'
           v_my_columns[s][t] = [
             v_my_columns[s][t - 1] + 1,
             v_my_columns[s - 1][t] + 1,
@@ -84,10 +82,10 @@ def mdld(p_str1, p_str2, p_block_limit=1)
     end
   end
 
- pp v_my_columns  
+ #pp v_my_columns  
  v_my_columns[v_str1_length-1][v_str2_length-1]
 end
 
-puts mdld('Pomatomus','oPmaotmus',1)
+#puts mdld('Pomatomus','oPmaotmus',1)
 
 
