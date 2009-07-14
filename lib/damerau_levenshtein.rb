@@ -47,4 +47,4 @@ def distance(str1, str2, max_dist, transposition_limit = 2)
   return d[sl2-1][sl1-1]
 end
 
-puts distance('Pmtoomusa saltarot', 'Pomatomus saltator', 4, 4)
+puts distance('Protozoa', 'Brotozoa', 10, 1)
