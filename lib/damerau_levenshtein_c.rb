@@ -12,10 +12,9 @@ class DamerauLevenshtein
 
   inline do |builder|
     builder.c "
-    static VALUE distance_utf(VALUE _s, VALUE _t, int block_size, int max_distance){
-      int min, i,j, sl, tl, cost, *d, distance, del, ins, subs, transp, block, current_distance;
-      
-      int stop_execution = 0;
+    static VALUE distance_utf(VALUE _s, VALUE _t, long block_size, long max_distance){
+      long min, i,j, sl, tl, cost, *d, distance, del, ins, subs, transp, block, current_distance;
+      long stop_execution = 0;
       
       VALUE *sv = RARRAY(_s)->ptr;
       VALUE *tv = RARRAY(_t)->ptr;
@@ -23,17 +22,17 @@ class DamerauLevenshtein
       sl = RARRAY(_s)->len;
       tl = RARRAY(_t)->len;
       
-      int s[sl];
-      int t[tl];
+      long s[sl];
+      long t[tl];
       
-      for (i=0; i < sl; i++) s[i] = NUM2INT(sv[i]);
-      for (i=0; i < tl; i++) t[i] = NUM2INT(tv[i]);
+      for (i=0; i < sl; i++) s[i] = NUM2LONG(sv[i]);
+      for (i=0; i < tl; i++) t[i] = NUM2LONG(tv[i]);
       
       sl++;
       tl++;
       
       //one-dimentional representation of 2 dimentional array len(s)+1 * len(t)+1
-      d = malloc((sizeof(int))*(sl)*(tl));
+      d = malloc((sizeof(long))*(sl)*(tl));
       //populate 'horisonal' row
       for(i = 0; i < sl; i++){
         d[i] = i;
@@ -79,7 +78,7 @@ class DamerauLevenshtein
       if (stop_execution == 1) distance = current_distance;
       
       free(d);
-      return INT2NUM(distance);
+      return LONG2NUM(distance);
     }
    "
   end
@@ -89,6 +88,9 @@ if __FILE__ == $0
   a=DamerauLevenshtein.new
   s = 'Cedarinia scabra Sjöstedt 1921'.unpack('U*')
   t = 'Cedarinia scabra Söjstedt 1921'.unpack('U*')
+  
+  puts s.join(",")
+  puts t.join(",")
 
   start = Time.now
   (1..100000).each do
