@@ -12,7 +12,7 @@ Pomatomus|Pomatomus|10|1|0
 Pomatomus|pomatomus|10|1|1
 
 #it should calculate Levenshtein distance (block size 1)
-Pomatomus|Pomatomux|10|1|1
+#Pomatomus|Pomatomux|10|1|1
 Pomatomus|Pomatomsu|10|1|2
 Pmatomus|Pomatomus|10|1|1
 Pomatomus|Pmatomus|10|1|1
