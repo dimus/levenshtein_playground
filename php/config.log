@@ -30,12 +30,20 @@ Kernel configured for up to 8 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1 2 3 4 5 6 7
 Primary memory available: 14.00 gigabytes
-Default processor set: 110 tasks, 442 threads, 8 processors
-Load average: 0.58, Mach factor: 7.41
+Default processor set: 94 tasks, 487 threads, 8 processors
+Load average: 0.52, Mach factor: 7.46
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /opt/local/bin
+PATH: /opt/local/sbin
+PATH: /Users/dimus/bin
+PATH: /usr/local/bin
+PATH: /opt/local/bin
+PATH: /opt/local/sbin
+PATH: /Users/dimus/bin
+PATH: /usr/local/bin
 PATH: /opt/local/bin
 PATH: /opt/local/sbin
 PATH: /Users/dimus/bin
@@ -46,6 +54,10 @@ PATH: /usr/sbin
 PATH: /sbin
 PATH: /usr/local/bin
 PATH: /usr/X11/bin
+PATH: /usr/local/jruby/bin
+PATH: /usr/local/ec2-api-tools/bin
+PATH: /usr/local/jruby/bin
+PATH: /usr/local/ec2-api-tools/bin
 PATH: /usr/local/jruby/bin
 PATH: /usr/local/ec2-api-tools/bin
 

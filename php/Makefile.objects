@@ -1,5 +1,5 @@
-mdl.lo: /Users/dimus/code/levenshtein_playground/php/mdl.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/Users/dimus/code/levenshtein_playground/php $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /Users/dimus/code/levenshtein_playground/php/mdl.c -o mdl.lo 
+mdl.lo: /Users/dimus/Sites/levenshtein_playground/php/mdl.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/Users/dimus/Sites/levenshtein_playground/php $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /Users/dimus/Sites/levenshtein_playground/php/mdl.c -o mdl.lo 
 $(phplibdir)/mdl.la: ./mdl.la
 	$(LIBTOOL) --mode=install cp ./mdl.la $(phplibdir)
 

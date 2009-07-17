@@ -1,7 +1,7 @@
-srcdir = /Users/dimus/code/levenshtein_playground/php
-builddir = /Users/dimus/code/levenshtein_playground/php
-top_srcdir = /Users/dimus/code/levenshtein_playground/php
-top_builddir = /Users/dimus/code/levenshtein_playground/php
+srcdir = /Users/dimus/Sites/levenshtein_playground/php
+builddir = /Users/dimus/Sites/levenshtein_playground/php
+top_srcdir = /Users/dimus/Sites/levenshtein_playground/php
+top_builddir = /Users/dimus/Sites/levenshtein_playground/php
 EGREP = /usr/bin/grep -E
 SED = /opt/local/bin/gsed
 CONFIGURE_COMMAND = './configure'
@@ -21,7 +21,7 @@ prefix = /usr
 exec_prefix = $(prefix)
 libdir = ${exec_prefix}/lib
 prefix = /usr
-phplibdir = /Users/dimus/code/levenshtein_playground/php/modules
+phplibdir = /Users/dimus/Sites/levenshtein_playground/php/modules
 phpincludedir = /usr/include/php
 CC = gcc
 CFLAGS = -g -O2
@@ -165,8 +165,8 @@ distclean: clean
 
 .PHONY: all clean install distclean test
 .NOEXPORT:
-mdl.lo: /Users/dimus/code/levenshtein_playground/php/mdl.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/Users/dimus/code/levenshtein_playground/php $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /Users/dimus/code/levenshtein_playground/php/mdl.c -o mdl.lo 
+mdl.lo: /Users/dimus/Sites/levenshtein_playground/php/mdl.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/Users/dimus/Sites/levenshtein_playground/php $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /Users/dimus/Sites/levenshtein_playground/php/mdl.c -o mdl.lo 
 $(phplibdir)/mdl.la: ./mdl.la
 	$(LIBTOOL) --mode=install cp ./mdl.la $(phplibdir)
 
