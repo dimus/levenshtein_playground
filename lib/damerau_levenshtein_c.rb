@@ -67,8 +67,8 @@ class DamerauLevenshtein
             if(transp < min) min = transp;
           }
           
-          if (current_distance > d[j*sl+i]) current_distance = d[j*sl+i];
           d[j*sl+i]=min;          
+          if (current_distance > d[j*sl+i]) current_distance = d[j*sl+i];
         }
         if (current_distance > max_distance) {
           stop_execution = 1;

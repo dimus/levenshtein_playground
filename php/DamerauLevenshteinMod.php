@@ -20,4 +20,4 @@ class DamerauLevenshteinMod {
 	}
 }
 
-echo DamerauLevenshteinMod::distance('Odnaжh','Odnazh');
+echo DamerauLevenshteinMod::distance(' Pomatomus','Pomatomus', 1, 10);

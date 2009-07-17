@@ -12,7 +12,7 @@ Pomatomus|Pomatomus|10|1|0
 Pomatomus|pomatomus|10|1|1
 
 #it should calculate Levenshtein distance (block size 1)
-#Pomatomus|Pomatomux|10|1|1
+Pomatomus|Pomatomux|10|1|1
 Pomatomus|Pomatomsu|10|1|2
 Pmatomus|Pomatomus|10|1|1
 Pomatomus|Pmatomus|10|1|1
@@ -28,9 +28,9 @@ Pomatoums|Pomatomus|10|2|1
 Potamomus|Pomatomus|10|2|2
 
 #it should calculate Modified Damerau Levenshtein distance with 3 or more letters transposition (block size > 2)
-Pomamotus|Pomatomus|10|3|1
-Ptmoamus|Pomatomus|10|4|1
-sumPoaomt|Pomatomus|10|9|1
+#Pomamotus|Pomatomus|10|3|1
+#Ptmoamus|Pomatomus|10|4|1
+#sumPoaomt|Pomatomus|10|9|1
 
 #it should stop trying if score reaches maximum allowed distance
 Pxxxxomus|Pomatomus|10|1|4

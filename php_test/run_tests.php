@@ -1,14 +1,14 @@
 <?php
 
-$DOC_ROOT = dirname(__FILE__) . "/../../";
+$DOC_ROOT = dirname(__FILE__) . "/../";
 require_once($DOC_ROOT . "lib/simpletest/autorun.php");
 ini_set('error_reporting', E_ALL);
 
 $group_test = new GroupTest('All tests');
 
-get_tests_from_dir($DOC_ROOT . "tests/", $group_test, true);
+get_tests_from_dir($DOC_ROOT . "php_test/", $group_test, true);
 
-$group_test->run(new HtmlReporter());
+$group_test->run(new TextReporter());
 
 
 
