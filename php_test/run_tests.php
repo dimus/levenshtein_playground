@@ -1,6 +1,6 @@
 <?php
 
-$DOC_ROOT = dirname(__FILE__) . "/../";
+$DOC_ROOT = dirname(__FILE__) . "/../../";
 require_once($DOC_ROOT . "lib/simpletest/autorun.php");
 ini_set('error_reporting', E_ALL);
 

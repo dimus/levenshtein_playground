@@ -1,12 +1,11 @@
 <?php
-require_once(dirname(__FILE__) . '/../../api/config.php');
-require_once(dirname(__FILE__) . "/../../api/classes/class.taxamatch.php");
+require_once(dirname(__FILE__) . "/../../modules/DamerauLevenshteinMod.php");
 
 class TestTaxaMatch extends UnitTestCase
 {
 	function setUp()
 	{
-		$this->tm = new Taxamatch();
+		$this->ld = DamerauLevenshteinMod;
 	}
 	
 	function testMatchGenera()
