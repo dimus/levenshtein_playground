@@ -19,6 +19,7 @@ Pomatomus|Pmatomus|10|1|1
 Rpmatomus|Pomatomus|10|1|2
 Pommtomus|Pomatomus|10|1|1
 Potamomus|Pomatomus|10|1|2
+Cedarinia scabra Sjöstedt 1921|Cedarinia scabra Sjostedt 1921|10|1|1
 
 #it should calculate Damerau Levenshtein distance with 2 letter 2 letter transpositions (block size 2)
 Pomatomus|oPmatomus|10|2|1
