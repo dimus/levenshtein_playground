@@ -1,5 +1,6 @@
 dir = File.expand_path(File.dirname(__FILE__))
 require dir + "/../lib/damerau_levenshtein_c"
+require dir + "/../lib/tony_rees"
 
 def read_test_file
   f = open(File.expand_path(File.dirname(__FILE__)) + '/test.txt')
@@ -27,6 +28,17 @@ describe 'DamerauLevenstein' do
           puts "%s, %s, %s" % [y[:str1], y[:str2], y[:distance]]
           @dl.distance(y[:str1], y[:str2], y[:block_size], y[:max_dist]).should == y[:distance]
         end
+      end
+    end
+  end
+end
+
+describe 'Tony Rees mdld' do
+  it 'should get tests' do
+    read_test_file do |y|
+      unless y[:comment] || y[:block_size] > 2
+        puts "%s, %s, %s" % [y[:str1], y[:str2], y[:distance]]
+        mdld(y[:str1], y[:str2], y[:block_size]).should == y[:distance]        
       end
     end
   end
