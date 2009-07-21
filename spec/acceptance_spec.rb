@@ -1,5 +1,5 @@
 dir = File.expand_path(File.dirname(__FILE__))
-require dir + "/../lib/damerau_levenshtein_c"
+require dir + "/../lib/damerau_levenshtein_mod"
 require dir + "/../lib/tony_rees"
 
 def read_test_file
@@ -16,18 +16,13 @@ def read_test_file
   end
 end
 
-describe 'DamerauLevenstein' do
-  before(:all) do
-    @dl = DamerauLevenshtein.new
-  end
-  
+describe 'DamerauLevensteinMod' do
   it 'should get tests' do
     read_test_file do |y|
+      dl = DamerauLevenshteinMod.new
       unless y[:comment]
-        if y[:block_size] < 3
-          puts "%s, %s, %s" % [y[:str1], y[:str2], y[:distance]]
-          @dl.distance(y[:str1], y[:str2], y[:block_size], y[:max_dist]).should == y[:distance]
-        end
+        puts "%s, %s, %s" % [y[:str1], y[:str2], y[:distance]]
+        dl.distance(y[:str1], y[:str2], y[:block_size], y[:max_dist]).should == y[:distance]
       end
     end
   end
@@ -35,10 +30,11 @@ end
 
 describe 'Tony Rees mdld' do
   it 'should get tests' do
+    trd = TonyRees.new
     read_test_file do |y|
       unless y[:comment]
         puts "%s, %s, %s" % [y[:str1], y[:str2], y[:distance]]
-        mdld(y[:str1], y[:str2], y[:block_size]).should == y[:distance]        
+        trd.distance(y[:str1], y[:str2], y[:block_size],y[:max_dist]).should == y[:distance]        
       end
     end
   end

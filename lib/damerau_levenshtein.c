@@ -6,21 +6,52 @@
 main()
 {
   int res;
-  int ar1[] = {2,1,3,4};
-  int ar2[] = {1,2,3,5};
+  int ar1[] = {1,2};
+  int ar2[] = {1,2,3,5,4,6};
   res = distance_utf(ar1, ar2, 1, 10);
   printf("%d\n", res);
   return 0;
 }
 
 
-int distance_utf(int *s, int *t, int block_size, int max_distance){
-  int min, i,j, sl, tl, cost, *d, distance, del, ins, subs, transp, block, current_distance;
-  
+int distance_utf(int *_s, int *_t, int block_size, int max_distance){
+  int min, i, j, start, sl, sl_orig, tl, tl_orig, cost, *d, distance, del, ins, subs, transp, block, current_distance;
+
   int stop_execution = 0;
   
-  sl = sizeof(s);
-  tl = sizeof(t);
+  sl = sl_orig = sizeof _s;
+  tl = tl_orig = sizeof _t;
+  printf("%d, %d\n\n", sizeof &_s, sizeof _s);
+
+  if (sl == 0) return tl;
+  if (tl == 0) return sl;
+  if (sl == 1 && tl == 1 && _s[0] != _t[0]) return 1;
+
+  //find where elements of arrays start to differ
+  for (i=0; (i < sl && i < tl); i++) {
+    if (_s[i] != _t[i]){
+      start = i;
+      break;
+    }
+  }
+  if (start == -1) start = i;
+  printf("%d, %d, %d\n", start, sl, tl); 
+  sl -= start;
+  tl -= start;
+  
+  //return shortcut values
+  if (sl == 0 && tl == 0) return 0;
+  if (sl == 0) return tl;
+  if (tl == 0) return sl;
+  if (sl == 1 && tl == 1 && _s[0] != _t[0]) return 1;
+  
+  int s[sl];
+  int t[tl];
+  for (i = start; i < sl; i++) {
+    printf("%d, %d\n", i, start);
+    s[i - start] = _s[i];
+  }
+  for (i = start; i < tl; i++) t[i-start] = _t[i];
   
   sl++;
   tl++;
