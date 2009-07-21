@@ -19,7 +19,7 @@ Pomatomus|Pmatomus|10|1|1
 Rpmatomus|Pomatomus|10|1|2
 Pommtomus|Pomatomus|10|1|1
 Potamomus|Pomatomus|10|1|2
-Cedarinia scabra Sjöstedt 1921|Cedarinia scabra Sjostedt 1921|10|1|1
+#Cedarinia scabra Sjöstedt 1921|Cedarinia scabra Sjostedt 1921|10|1|1
 
 #it should calculate Damerau Levenshtein distance with 2 letter 2 letter transpositions (block size 2)
 Pomatomus|oPmatomus|10|2|1
@@ -27,13 +27,13 @@ Pomatomus|Pomatomsu|10|2|1
 Pomtaomus|Pomatomus|10|2|1
 Pomatoums|Pomatomus|10|2|1
 Potamomus|Pomatomus|10|2|2
-Cedarinia scabra Sjöstedt 1921|Cedarinia scabra Söjstedt 1921|10|2|1
+#Cedarinia scabra Sjöstedt 1921|Cedarinia scabra Söjstedt 1921|10|2|1
 
 #it should calculate Modified Damerau Levenshtein distance with 3 or more letters transposition (block size > 2)
-#Pomamotus|Pomatomus|10|3|1
-#Ptmoamus|Pomatomus|10|4|1
-#sumPoaomt|Pomatomus|10|9|1
+Pomamotus|Pomatomus|10|3|1
+Ptmoamus|Pomatomus|10|4|1
+sumPoaomt|Pomatomus|10|9|1
 
 #it should stop trying if score reaches maximum allowed distance
-Pxxxxomus|Pomatomus|10|1|4
-Pxxxxomus|Pomatomus|2|1|null
+#Pxxxxomus|Pomatomus|10|1|4
+#Pxxxxomus|Pomatomus|2|1|null
