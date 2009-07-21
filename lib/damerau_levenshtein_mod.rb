@@ -23,6 +23,11 @@ class DamerauLevenshteinMod
       sl = RARRAY(_s)->len;
       tl = RARRAY(_t)->len;
       
+      if (sl == 0) return LONG2NUM(tl);
+      if (tl == 0) return LONG2NUM(sl);
+      //case of lengths 1 must present or it will break further in the code
+      if (sl == 1 && tl == 1 && sv[0] != tv[0]) return LONG2NUM(1);
+      
       long s[sl];
       long t[tl];
       
@@ -65,13 +70,13 @@ class DamerauLevenshteinMod
             i1 = i - (block * 2);
             j1 = j - (block * 2);
             for (k = i1; k < i1 + block; k++) {
-              if (s[k - 1] != t[k - 1 + block]){
+              if (s[k] != t[k + block]){
                 swap1 = 0;
                 break;
               }
             }
             for (k = j1; k < j1 + block; k++) {
-              if (t[k - 1] != s[k - 1 + block]){
+              if (t[k] != s[k + block]){
                 swap2 = 0;
                 break;
               }
