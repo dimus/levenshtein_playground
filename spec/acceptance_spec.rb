@@ -36,7 +36,7 @@ end
 describe 'Tony Rees mdld' do
   it 'should get tests' do
     read_test_file do |y|
-      unless y[:comment] || y[:block_size] > 2
+      unless y[:comment]
         puts "%s, %s, %s" % [y[:str1], y[:str2], y[:distance]]
         mdld(y[:str1], y[:str2], y[:block_size]).should == y[:distance]        
       end

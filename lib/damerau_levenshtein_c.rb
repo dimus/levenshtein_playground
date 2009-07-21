@@ -35,15 +35,16 @@ class DamerauLevenshtein
       d = malloc((sizeof(long))*(sl)*(tl));
       //populate 'horisonal' row
       for(i = 0; i < sl; i++){
-        d[i] = i;
+        
       }
       //populate 'vertical' row starting from the 2nd position (first one is filled already)
-      for(i = 1; i < tl; i++){
+      for(i = 0; i < tl; i++){
         d[i*sl] = i;
       }
       
       //fill up array with scores
       for(i = 1; i<sl; i++){
+        d[i] = i;
         if (stop_execution == 1) break;
         current_distance = 10000;
         for(j = 1; j<tl; j++){
@@ -106,4 +107,5 @@ if __FILE__ == $0
 
   puts a.distance('Cedarinia scabra Sjöstedt 1921','Cedarinia scabra Söjstedt 1921')
   puts a.distance_utf(s, t, 2, 10) 
+  puts a.distance('tar','atp',1,10);
 end
