@@ -122,17 +122,17 @@ if __FILE__ == $0
   #puts s.join(",")
   #puts t.join(",")
 
-  #start = Time.now
-  #(1..100000).each do
-  #  a.distance('Cedarinia scabra Sjöstedt 1921', 'Cedarinia scabra Söjstedt 1921')
-  #end
-  #puts "with unpack time: " + (Time.now - start).to_s + ' sec'
+  start = Time.now
+  (1..100000).each do
+   a.distance('Cedarinia scabra Sjöstedt 1921', 'Cedarinia scabra Söjstedt 1921')
+  end
+  puts "with unpack time: " + (Time.now - start).to_s + ' sec'
 
-  #start = Time.now
-  #(1..100000).each do
-  #  a.distance_utf(s, t, 2, 10)
-  #end
-  #puts 'utf time: ' + (Time.now - start).to_s + ' sec'
+  start = Time.now
+  (1..100000).each do
+   a.distance_utf(s, t, 2, 10)
+  end
+  puts 'utf time: ' + (Time.now - start).to_s + ' sec'
 
   #puts a.distance('Cedarinia scabra Sjöstedt 1921','Cedarinia scabra Söjstedt 1921')
   #puts a.distance_utf(s, t, 2, 10) 
