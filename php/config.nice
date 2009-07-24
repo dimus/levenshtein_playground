@@ -3,4 +3,6 @@
 # Created by configure
 
 './configure' \
+'--enable-mdl' \
+'--with-php-config=/opt/local/bin/php-config' \
 "$@"

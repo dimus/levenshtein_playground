@@ -1,5 +1,4 @@
 <?php
-dl("mdl.so");
 
 class DamerauLevenshteinMod {
 	static function distance($ustr1, $ustr2, $block_size=2, $max_distance=10) {
@@ -20,4 +19,3 @@ class DamerauLevenshteinMod {
 	}
 }
 
-echo DamerauLevenshteinMod::distance(' Pomatomus','Pomatomus', 1, 10);

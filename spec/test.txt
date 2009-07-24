@@ -39,7 +39,7 @@ Pommtomus|Pomatomus|10|1|1
 Potamomus|Pomatomus|10|1|2
 Cedarinia scabra Sjöstedt 1921|Cedarinia scabra Sjostedt 1921|10|1|1
 Pomatomus|oPmatomus|10|1|1
-#Pomatomus|Pomatomsu|10|1|1
+Pomatomus|Pomatomsu|10|1|1
 Pomtaomus|Pomatomus|10|1|1
 Pomatoums|Pomatomus|10|1|1
 Potamomus|Pomatomus|10|1|2
@@ -48,6 +48,10 @@ Cedarinia scabra Sjöstedt 1921|Cedarinia scabra Söjstedt 1921|10|2|1
 #it should calculate Modified Damerau Levenshtein distance with 2 or more characters transposition (block size > 2)
 serrulatus|serratulus|10|2|2
 Pomatomus|Poomumats|10|3|3
+vesiculosus|vecusilosus|10|1|4
+vesiculosus|vecusilosus|10|2|2
+trimerophyton|mertriophyton|10|1|6
+trimerophyton|mertriophyton|10|3|3
 
 #it should stop trying if distance exceeds maximum allowed distance
 Pxxxxomus|Pomatomus|10|1|4
