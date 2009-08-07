@@ -16,12 +16,12 @@ class DamerauLevenshteinMod
     static VALUE distance_utf(VALUE _s, VALUE _t, long block_size, long max_distance){
       long min, i, i1, j, j1, k, sl, half_sl, tl, half_tl, cost, *d, distance, del, ins, subs, transp, block, current_distance;
       long stop_execution = 0;
+
+      VALUE *sv = RARRAY_PTR(_s);
+      VALUE *tv = RARRAY_PTR(_t);
       
-      VALUE *sv = RARRAY(_s)->ptr;
-      VALUE *tv = RARRAY(_t)->ptr;
-      
-      sl = RARRAY(_s)->len;
-      tl = RARRAY(_t)->len;
+      sl = RARRAY_LEN(_s);
+      tl = RARRAY_LEN(_t);
       
       if (sl == 0) return LONG2NUM(tl);
       if (tl == 0) return LONG2NUM(sl);
@@ -39,10 +39,6 @@ class DamerauLevenshteinMod
       
       //one-dimentional representation of 2 dimentional array len(s)+1 * len(t)+1
       d = malloc((sizeof(long))*(sl)*(tl));
-      //populate 'horisonal' row
-      for(i = 0; i < sl; i++){
-        
-      }
       //populate 'vertical' row starting from the 2nd position (first one is filled already)
       for(i = 0; i < tl; i++){
         d[i*sl] = i;
